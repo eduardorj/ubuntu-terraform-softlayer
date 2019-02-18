@@ -1,1 +1,1 @@
-# OpenShift deployment using Terraform# ubuntu-terraform-softlayer
+# Ubuntu deployment using Terraform# ubuntu-terraform-softlayer

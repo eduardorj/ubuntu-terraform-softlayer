@@ -1,0 +1,67 @@
+{
+   "name": "Ubuntu on a Single VM",
+   "description": "Ubuntu",
+   "version": "1.0",
+   "imageUrl": "./assets/svg/IBM_WebSphere_Standalone.svg",
+   "image": "tp_WAS_standalone.png",
+   "type": "prebuilt",
+   "status": "active",
+   "manifest": {
+     "template_type": "Terraform",
+     "template_format": "HCL",
+     "template_provider": "IBM",
+     "template": {
+       "templateData": "",
+       "templateVariables": "",
+       "templateOutput": ""
+     },
+     "template_source": {
+       "githubRepoUrl": "",
+       "githubAccessToken": "",
+       "relativePathToTemplateFolder": "/",
+       "templateFileName": "ubuntu.tf"
+     }
+   },
+   "metadata": {
+     "displayName": "Ubuntu",
+     "providerDisplayName": "IBM",
+     "longDescription": "Deploys a single node of Ubuntu.",
+     "bullets": [
+       {
+         "title": "Clouds",
+         "description": "IBM Cloud/Softlayer"
+       },
+       {
+         "title": "Operating systems supported",
+         "description": "IBM Cloud: CentOS 7"
+       },
+       {
+         "title": "Default virtual machine settings",
+         "description": "<ul><li>IBM Cloud:<ul style=\"margin-left: 20px;\"><li>Flavor: Cores = 8, Memory = 16GB, Storage = 100GB SAN</li><li>Network: Private IP - Computed, Public IP - Computed</li><li>Firewall: Not enabled</li></ul></li></ul>"
+       }
+     ],
+     "featuredImageUrl": "https://ibmpatternengine-staticcontent-prod.eu-gb.mybluemix.net/ic_patternengine_50.png",
+     "imageUrl": "https://ibmpatternengine-staticcontent-prod.eu-gb.mybluemix.net/ic_patternengine_50.png",
+     "mediumImageUrl": "https://ibmpatternengine-staticcontent-prod.eu-gb.mybluemix.net/ic_patternengine_32.png",
+     "smallImageUrl": "https://ibmpatternengine-staticcontent-prod.eu-gb.mybluemix.net/ic_patternengine_24.png",
+     "documentationUrl": "https://console.stage1.ng.bluemix.net/docs/services/CloudAutomationManager/index.html",
+     "termsUrl": "http://www-03.ibm.com/software/sla/sladb.nsf/sla/bm-7448-01",
+     "media": [
+       {
+         "type": "image",
+         "thumbnailUrl": "https://ibmpatternengine-staticcontent-prod.eu-gb.mybluemix.net/screenshots_1.png",
+         "url": "https://ibmpatternengine-staticcontent-prod.eu-gb.mybluemix.net/screenshots_1_large.png",
+         "caption": ""
+       },
+       {
+         "type": "image",
+         "thumbnailUrl": "https://ibmpatternengine-staticcontent-prod.eu-gb.mybluemix.net/screenshots_2.png",
+         "url": "https://ibmpatternengine-staticcontent-prod.eu-gb.mybluemix.net/screenshots_2_large.png",
+         "caption": ""
+       }
+     ]
+   },
+   "toolchain": {
+     "git": "https://github.com/ibmcam/cam-toolchain"
+   }
+ }
