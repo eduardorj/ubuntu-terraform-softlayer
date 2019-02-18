@@ -188,76 +188,16 @@
       "hidden": false,
       "immutable": false,
       "immutable_after_create": false
-    },
-    {
-      "name": "openshift-username",
-      "label": "Username",
-      "description": "Username for Openshift",
-      "type": "string",
-      "default": "",
-      "validation": "",
-      "group_name": "openshift-g",
-      "required": true,
-      "secured": false,
-      "hidden": false,
-      "immutable": false,
-      "immutable_after_create": false
-    },
-    {
-      "name": "openshift-password",
-      "label": "Password",
-      "description": "Password for openshift",
-      "type": "string",
-      "default": "",
-      "validation": "",
-      "group_name": "openshift-g",
-      "required": true,
-      "secured": true,
-      "hidden": false,
-      "immutable": false,
-      "immutable_after_create": false
     }
   ],
-  "template_output_params": [
-    {
-      "name": "The IP address of your server is:",
-      "label": "The Ip Address Of Your Server Is :",
-      "description": "The Ip Address Of Your Server Is :",
-      "group_name": "outputparms",
-      "secured": false,
-      "hidden": false,
-      "shortname": "",
-      "type": "string"
-    },
-    {
-      "name": "To access your openshift instance to go:",
-      "label": "To Access Your Openshift Instance To Go :",
-      "description": "To Access Your Openshift Instance To Go :",
-      "group_name": "outputparms",
-      "secured": false,
-      "hidden": false,
-      "shortname": "",
-      "type": "link"
-    },
-    {
-      "name": "Use the following credentias:",
-      "label": "Use The Following Credentias :",
-      "description": "Use The Following Credentias :",
-      "group_name": "outputparms",
-      "secured": false,
-      "hidden": false,
-      "shortname": "",
-      "type": "string"
-    },
-    {
-      "name": "You also can log on using command line:",
-      "label": "You Also Can Log On Using Command Line :",
-      "description": "You Also Can Log On Using Command Line :",
-      "group_name": "",
-      "secured": false,
-      "hidden": false,
-      "shortname": "",
-      "type": "string"
-    }
-  ]
+  "template_output_params": [  {
+    "name": "The IP address of your server is:",
+    "label": "The Ip Address Of Your Server Is :",
+    "description": "The Ip Address Of Your Server Is :",
+    "group_name": "outputparms",
+    "secured": false,
+    "hidden": false,
+    "shortname": "",
+    "type": "string"
+  } ]
 }

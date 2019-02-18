@@ -56,7 +56,7 @@ resource "ibm_compute_ssh_key" "temp_public_key" {
 ##############################################################
 resource "ibm_compute_vm_instance" "softlayer_virtual_guest" {
   hostname                 = "${var.hostname}"
-  os_reference_code        = "CENTOS_7_64"
+  os_reference_code        = "UBUNTU_18_64"
   domain                   = "cam.ibm.com"
   datacenter               = "${var.datacenter}"
   network_speed            = 10
@@ -83,20 +83,6 @@ resource "ibm_compute_vm_instance" "softlayer_virtual_guest" {
 
 # Change root password
 echo "root:${var.password}" | chpasswd
-
-# Install openshit dependences
-yum install git docker net-tools -y
-
-# Set openshift username and passowrd
-export USERNAME=${var.openshift-username}
-export PASSWORD=${var.openshift-password}
-
-# Set network interfaces controled by network management
-sed -i 's/NM_CONTROLLED=no/NM_CONTROLLED=yes/' /etc/sysconfig/network-scripts/ifcfg-eth0
-sed -i 's/NM_CONTROLLED=no/NM_CONTROLLED=yes/' /etc/sysconfig/network-scripts/ifcfg-eth1
-
-# Perform installation
-curl https://raw.githubusercontent.com/gshipley/installcentos/master/install-openshift.sh | INTERACTIVE=false /bin/bash &>/dev/null
 
 EOF
 
