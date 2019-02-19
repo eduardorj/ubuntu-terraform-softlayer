@@ -64,7 +64,7 @@ resource "ibm_compute_vm_instance" "softlayer_virtual_guest" {
   private_network_only     = false
   cores                    = 8
   memory                   = 16384
-  disks                    = [80]
+  disks                    = [100]
   dedicated_acct_host_only = false
   local_disk               = false
   ssh_key_ids              = ["${ibm_compute_ssh_key.temp_public_key.id}"]
