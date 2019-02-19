@@ -94,6 +94,8 @@ ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
 
 sed -i 's/ - update_etc_hosts/# - update_etc_hosts/' /etc/cloud/cloud.cfg
 
+sed -i 's/127.0.1.1	mycluster/${ibm_compute_vm_instance.softlayer_virtual_guest.ipv4_address}	mycluster/' /etc/hosts
+
 EOF
 
     destination = "/tmp/installation.sh"
