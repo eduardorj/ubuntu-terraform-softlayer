@@ -96,6 +96,13 @@ sed -i 's/ - update_etc_hosts/# - update_etc_hosts/' /etc/cloud/cloud.cfg
 
 sed -i 's/127.0.1.1	mycluster/${ibm_compute_vm_instance.softlayer_virtual_guest.ipv4_address}	mycluster/' /etc/hosts
 
+apt install git
+
+cd / && git clone https://github.com/eduardorj/jenkins-helm-edu.git
+
+mkdir /data/
+mkdir /data/jenkins
+
 EOF
 
     destination = "/tmp/installation.sh"
