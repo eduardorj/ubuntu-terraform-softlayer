@@ -60,7 +60,7 @@ resource "ibm_compute_vm_instance" "softlayer_virtual_guest" {
   domain                   = "cam.ibm.com"
   datacenter               = "${var.datacenter}"
   network_speed            = 10
-  hourly_billing           = true
+  hourly_billing           = false
   private_network_only     = false
   cores                    = 8
   memory                   = 32768
