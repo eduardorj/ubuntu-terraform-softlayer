@@ -68,7 +68,7 @@
       "validation": "",
       "group_name": "virtualmachine",
       "required": true,
-      "secured": true,
+      "secured": false,
       "hidden": false,
       "immutable": false,
       "immutable_after_create": false
@@ -82,7 +82,7 @@
       "validation": "",
       "group_name": "virtualmachine",
       "required": true,
-      "secured": true,
+      "secured": false,
       "hidden": false,
       "immutable": false,
       "immutable_after_create": false
@@ -96,7 +96,7 @@
       "validation": "",
       "group_name": "virtualmachine",
       "required": true,
-      "secured": true,
+      "secured": false,
       "hidden": false,
       "immutable": false,
       "immutable_after_create": false
