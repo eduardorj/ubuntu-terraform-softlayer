@@ -28,15 +28,23 @@ provider "ibm" {
 # Define the variables
 #########################################################
 variable "datacenter" {
-  description = "Softlayer datacenter where infrastructure resources will be deployed"
+  description = "Datacenter where infrastructure resources will be deployed"
+}
+
+variable "cpu" {
+  description = "CPU"
+}
+
+variable "memoria" {
+  description = "Memoria"
 }
 
 variable "hostname" {
-  description = "Hostname of the virtual instance to be deployed"
+  description = "Nome da máquina"
 }
 
 variable "password" {
-  description = "Password of the virtual instance to be deployed"
+  description = "Senha para acesso"
 }
 
 ##############################################################
@@ -57,13 +65,13 @@ resource "ibm_compute_ssh_key" "temp_public_key" {
 resource "ibm_compute_vm_instance" "softlayer_virtual_guest" {
   hostname                 = "${var.hostname}"
   os_reference_code        = "UBUNTU_18_64"
-  domain                   = "icp.cloud"
+  domain                   = "ibm.cloud"
   datacenter               = "${var.datacenter}"
   network_speed            = 10
   hourly_billing           = true
   private_network_only     = false
-  cores                    = 8
-  memory                   = 32768
+  cores                    = "${var.cpu}"
+  memory                   = "${var.memoria}"
   disks                    = [100]
   dedicated_acct_host_only = false
   local_disk               = false
@@ -88,21 +96,6 @@ echo "root:${var.password}" | chpasswd
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
 
-# Fixing DNS issue
-rm -f /etc/resolv.conf
-ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
-
-sed -i 's/ - update_etc_hosts/# - update_etc_hosts/' /etc/cloud/cloud.cfg
-
-sed -i 's/127.0.1.1	mycluster/${ibm_compute_vm_instance.softlayer_virtual_guest.ipv4_address}	mycluster/' /etc/hosts
-
-apt install git
-
-cd / && git clone https://github.com/eduardorj/jenkins-helm-edu.git
-
-mkdir /data/
-mkdir /data/jenkins
-
 EOF
 
     destination = "/tmp/installation.sh"
@@ -116,7 +109,7 @@ EOF
   }
 }
 
-output "The IP address of your server is:" {
+output "ip" {
   value = "${ibm_compute_vm_instance.softlayer_virtual_guest.ipv4_address}"
 }
 
