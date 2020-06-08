@@ -32,19 +32,19 @@ variable "datacenter" {
 }
 
 variable "cpu" {
-  description = "CPU"
+  text = "CPU"
 }
 
 variable "memory" {
-  description = "Memory"
+  text = "Memory"
 }
 
 variable "hostname" {
-  description = "Nome da máquina"
+  text = "Nome da máquina"
 }
 
 variable "password" {
-  description = "Senha para acesso"
+  text = "Senha para acesso"
 }
 
 ##############################################################
