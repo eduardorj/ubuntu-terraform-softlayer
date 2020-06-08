@@ -35,8 +35,8 @@ variable "cpu" {
   description = "CPU"
 }
 
-variable "memoria" {
-  description = "Memoria"
+variable "memory" {
+  description = "Memory"
 }
 
 variable "hostname" {
@@ -71,7 +71,7 @@ resource "ibm_compute_vm_instance" "softlayer_virtual_guest" {
   hourly_billing           = true
   private_network_only     = false
   cores                    = "${var.cpu}"
-  memory                   = "${var.memoria}"
+  memory                   = "${var.memory}"
   disks                    = [100]
   dedicated_acct_host_only = false
   local_disk               = false
@@ -91,10 +91,6 @@ resource "ibm_compute_vm_instance" "softlayer_virtual_guest" {
 
 # Change root password
 echo "root:${var.password}" | chpasswd
-
-# Installing docker
-curl -fsSL https://get.docker.com -o get-docker.sh
-sh get-docker.sh
 
 EOF
 

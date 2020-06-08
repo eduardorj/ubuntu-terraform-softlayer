@@ -76,7 +76,7 @@
     {
       "name": "cpu",
       "label": "CPU",
-      "description": "Número de CPUs",
+      "description": "Quantity of CPUs",
       "type": "string",
       "default": " ",
       "validation": "",
@@ -85,12 +85,30 @@
       "secured": false,
       "hidden": false,
       "immutable": false,
-      "immutable_after_create": false
+      "immutable_after_create": false,
+      "options": [
+        {
+          "value": "1",
+          "label": "1 CPU"
+        },
+        {
+          "value": "2",
+          "label": "2 CPUs"
+        },
+        {
+          "value": "3",
+          "label": "3 CPUs"
+        },
+        {
+          "value": "1",
+          "label": "4 CPUs"
+        }
+      ]
     },
     {
-      "name": "memoria",
-      "label": "Memória",
-      "description": "Quantidade de Memória",
+      "name": "memory",
+      "label": "Memory",
+      "description": "Memory size",
       "type": "string",
       "default": " ",
       "validation": "",
@@ -99,7 +117,25 @@
       "secured": false,
       "hidden": false,
       "immutable": false,
-      "immutable_after_create": false
+      "immutable_after_create": false,
+      "options": [
+        {
+          "value": "2048",
+          "label": "2 GBs"
+        },
+        {
+          "value": "3072",
+          "label": "3 GBs"
+        },
+        {
+          "value": "4096",
+          "label": "4 GBs"
+        },
+        {
+          "value": "5120",
+          "label": "5 GBs"
+        }
+      ]
     }
   ],
   "template_output_params": [  {

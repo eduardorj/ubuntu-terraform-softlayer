@@ -33,7 +33,7 @@
        },
        {
          "title": "Operating systems supported",
-         "description": "IBM Cloud: CentOS 7"
+         "description": "IBM Cloud: Ubuntu"
        },
        {
          "title": "Default virtual machine settings",
