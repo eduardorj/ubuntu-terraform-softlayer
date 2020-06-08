@@ -124,16 +124,12 @@
           "label": "2 GBs"
         },
         {
-          "value": "3072",
-          "label": "3 GBs"
-        },
-        {
           "value": "4096",
           "label": "4 GBs"
         },
         {
-          "value": "5120",
-          "label": "5 GBs"
+          "value": "8192",
+          "label": "8 GBs"
         }
       ]
     }
