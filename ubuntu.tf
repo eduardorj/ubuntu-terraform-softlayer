@@ -84,25 +84,19 @@ resource "ibm_compute_vm_instance" "softlayer_virtual_guest" {
     host        = "${self.ipv4_address}"
   }
 
-  # Create the installation script
-  provisioner "file" {
-    content = <<EOF
-#!/bin/bash
-
-# Change root password
-echo "root:${var.password}" | chpasswd
-
-EOF
-
-    destination = "/tmp/installation.sh"
-  }
-
-  # Execute the script remotely
   provisioner "remote-exec" {
     inline = [
-      "chmod +x /tmp/installation.sh; bash /tmp/installation.sh",
+      "echo \"root:${var.password}\" | chpasswd",
+      "apt-get update",
+      "apt-get install python ansible -y",
+      "echo \"[apache]\" >> /etc/ansible/hosts",
+      "echo $(/sbin/ip -o -4 addr list eth1 | awk '{print $4}' | cut -d/ -f1) >> /etc/ansible/hosts",
+      "git clone https://github.com/eduardorj/ansible-apache.git",
+      "ansible-playbook ./ansible-apache/apache.yaml --connection=local",
     ]
   }
+  
+  
 }
 
 output "ip" {
